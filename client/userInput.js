@@ -6,7 +6,9 @@ Template.userInput.events({
             no : tmpl.find( 'input[name=no]').value,
             name : tmpl.find( 'input[name=name]').value,
             email : tmpl.find( 'input[name=email]').value
+        }, function(){
+            Router.go('/userList');
         });
-        console.log( tmpl );
+
     }
 });
