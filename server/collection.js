@@ -1,4 +1,4 @@
-Users = new Mongo.Collection('users');
+Users = new Mongo.Collection('my_users');
 
 Meteor.startup(function() {
     if (Users.find().count() === 0){

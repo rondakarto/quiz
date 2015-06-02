@@ -1,7 +1,11 @@
 Router.route('/userList',{
         template : 'userList',
         waitOn:function(){
-            return [Meteor.subscribe('getAllUsers')];
+            if(Meteor.userId()){
+                return [Meteor.subscribe('getAllUsers')];
+            } else {
+                return [];
+            }
         },
         data : function(){
             return {
@@ -13,4 +17,12 @@ Router.route('/userList',{
 
 Router.route('/userInput', {
     template : 'userInput'
+});
+
+Router.route('/login', {
+   template : 'login'
+});
+
+Router.route('/signup', {
+    template : 'signup'
 });
